@@ -11,8 +11,8 @@ class M_Barang extends CI_Model {
 		$query = $this->db->get()->result();
 		return $query;
 	}
+
 	
-		
 
 }
 

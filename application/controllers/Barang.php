@@ -9,13 +9,22 @@ class Barang extends REST_Controller {
     }
 
  function index_get() {
+//memanggil dari model M_Barang dari folder models
         $this->load->model('M_Barang');
-        $id_barang = $this->get('nama_barang');
+// variable id_barang nilainya didapatkan dari ? $this->get('nama_barang')
+        //post
+        //get
+        //put
+        //delete
+        //patch
+        $nama_barang = $this->get('nama_barang');
+// mengisi data array 
         $data=array();
-        if ($id_barang == '') {
+
+        if ($nama_barang == '') {
             $barang = $this->M_Barang->get_barang();
         } else { 
-            $this->db->where('id_barang', $id_barang);
+            $this->db->where('nama_barang', $nama_barang);
             $barang = $this->db->get('barang')->result();
         }
         $data=['data'=>$barang];
