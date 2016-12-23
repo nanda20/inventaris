@@ -1,4 +1,50 @@
-wajib : 
-*RMI - Koneksi Database min 2 Table
-    - TCP/IP/UDP
-*multi tread
+
+2Client
+1. Mahasiswa Umum
+	Transaksi -> 
+	a.GetDataBarang()
+		post
+		{
+		   	- nama_barang 
+		}
+		return 
+		{
+		   	- nama_kategori
+		   	- kondisi
+		   	- nama_barang
+		   	- jumlah_barang
+		   	- jumlah_tersedia
+		   	- nama_ukm
+  		   	- kontak
+		}
+		tabel{
+			- Barang,kategori,ukm
+		}		
+
+2. Mahasiswa (admin)
+      	Transaksi ->
+	a. login()
+		post{
+			- id_user
+			- password
+		}
+		return{
+			- login
+			- id_ukm	
+			- nama_ukm
+			- nama_user
+ 		 	- jurusan	     		
+		}
+		table{
+			user,ukm	
+		}
+	b. insertPeminjaman()
+		post{
+			- tabel peminjaman
+		}
+		return{
+			- status: 200/500
+		} 
+	c. 
+		 
+
