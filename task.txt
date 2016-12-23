@@ -1,0 +1,4 @@
+wajib : 
+*RMI - Koneksi Database min 2 Table
+    - TCP/IP/UDP
+*multi tread
