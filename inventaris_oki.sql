@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2016 at 04:34 AM
+-- Generation Time: Dec 23, 2016 at 12:08 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -41,8 +41,7 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kondisi`, `jumlah_barang`, `jumlah_tersedia`, `id_ukm`, `id_kategori`) VALUES
-('1', 'Speaker', 'Baru', 2, 1, 1, '1'),
-('2', 'Mix', 'Bagus', 5, 2, 1, '1');
+('1', 'Karpet', 'Baru', 2, 1, 1, '2');
 
 -- --------------------------------------------------------
 
@@ -54,36 +53,6 @@ CREATE TABLE `kategori` (
   `id_kategori` varchar(5) NOT NULL,
   `nama_kategori` varchar(35) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kategori`
---
-
-INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-('1', 'Perlengkapan Sound System'),
-('2', 'Alat Pembersih');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `komik`
---
-
-CREATE TABLE `komik` (
-  `id` int(11) NOT NULL,
-  `namaKomik` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `komik`
---
-
-INSERT INTO `komik` (`id`, `namaKomik`) VALUES
-(1, 'Naruto'),
-(2, 'Bleach'),
-(3, 'One Piece'),
-(4, 'Komang'),
-(5, 'Petruk');
 
 -- --------------------------------------------------------
 
@@ -126,14 +95,6 @@ CREATE TABLE `ukm` (
   `kontak` varchar(12) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ukm`
---
-
-INSERT INTO `ukm` (`id_ukm`, `nama_ukm`, `kontak`) VALUES
-(1, 'USMA ( Usaha Mahasiswa )', '01921892712'),
-(2, 'Rispol (Rohis Polinema)', '1098329102');
-
 -- --------------------------------------------------------
 
 --
@@ -147,14 +108,6 @@ CREATE TABLE `user` (
   `jurusan` varchar(50) NOT NULL,
   `id_ukm` varchar(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id_user`, `nama_user`, `password`, `jurusan`, `id_ukm`) VALUES
-(1441180033, 'Dhitta Hananda', '12345', 'Teknik Informatika', '1'),
-(1441180034, 'Suprihatin', '12345', 'Teknik Informatika', '1');
 
 --
 -- Indexes for dumped tables
@@ -171,12 +124,6 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
-
---
--- Indexes for table `komik`
---
-ALTER TABLE `komik`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `peminjam`
@@ -202,15 +149,6 @@ ALTER TABLE `ukm`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `komik`
---
-ALTER TABLE `komik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
